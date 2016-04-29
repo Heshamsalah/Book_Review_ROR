@@ -1,0 +1,10 @@
+<div class="note">
+  <div>
+    <%= content_tag :span, "#{note.title} (#{time_ago_in_words note.created_at} ago)", class: "note-title"%> <!-- show the note title  and created_at time-->
+  </div>
+  <div>
+    <%= simple_format note.note %> <!-- simple_format formates new lines as </br>
+    the first note is the model name the second note is the column name-->
+  </div>
+<div> <%= link_to "Delete Note", [@book, note], method: :delete%> </div>
+</div>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IReviewed</title>
+  <%= stylesheet_link_tag   'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% if logged_in? %>
+  <div style='float: right;'>
+    Logged in as <%= current_user.name %>
+    (<%= link_to "logout", logout_path, method: :delete %>)
+  </div>
+<% end %>
+
+<% flash.each do |key,val| %>
+  <p id='<%= key %>'> <%= val %> </p>
+<% end %>
+
+<%= yield %> <!-- insert the actual body of whatever template you are viewing now -->
+
+</body>
+</html>
