@@ -1,6 +1,7 @@
+<% provide(:title, 'Home') %>
 <h1>Listing Books</h1>
 
-<table>
+<table class = "table table-condensed">
   <thead>
     <tr>
       <th>Name</th>
@@ -21,8 +22,10 @@
     <% end %>
   </tbody>
 </table>
-
-<%= will_paginate @books %>
-<br>
-
-<%= link_to 'New Book', new_book_path %>
+<div class="center">
+<%= link_to 'New Book', new_book_path, class: "btn btn-lg btn-primary" %>
+</br>
+<div class="pagination">
+  <%= will_paginate @books %>
+</div>
+</div>

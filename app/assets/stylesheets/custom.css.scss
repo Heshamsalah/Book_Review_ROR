@@ -1,0 +1,41 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.book-title { font: bold 15px arial, sans-serif; }
+.note-title { font: bold 12px arial, sans-serif; }
+.note {
+  background: lighten(green, 50%);
+ 	margin: 15px;
+  padding: 5px;
+ 	border: 1px solid;
+ 	border-radius: 5px;
+ 	width: 300px;
+  width: 30%;
+  margin-top: 20px;
+  @include box_sizing;
+}
+/* universal */
+body {
+  padding-top: 10px;
+}
+/*
+section {
+  overflow: auto;
+}
+textarea {
+  resize: vertical;
+}*/
+.center {
+  text-align: center;
+}
+h1 {
+  margin-bottom: 10px;
+  text-align: center;
+}

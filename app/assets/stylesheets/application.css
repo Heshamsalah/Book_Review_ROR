@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ /*
  .book-title { font: bold 15px arial, sans-serif; }
  .note-title { font: bold 12px arial, sans-serif; }
  .book { padding-bottom: 10px; }
@@ -30,3 +31,4 @@
  #alert   { color: red; }
  .field   { margin: 5px; }
  .actions { margin: 10px 0px; }
+*/

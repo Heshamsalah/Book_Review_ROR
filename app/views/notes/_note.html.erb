@@ -6,5 +6,5 @@
     <%= simple_format note.note %> <!-- simple_format formates new lines as </br>
     the first note is the model name the second note is the column name-->
   </div>
-<div> <%= link_to "Delete Note", [@book, note], method: :delete%> </div>
+<div> <%= link_to "Delete Note", [@book, note], method: :delete, class: "btn btn-sm btn-primary"%> </div>
 </div>

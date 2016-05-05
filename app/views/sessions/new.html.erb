@@ -1,14 +1,20 @@
-<h1>login</h1>
-<%= form_for(:reviewer, url: sessions_path) do |f| %>
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+
+<div class="container">
+  <h2>Book Review Login</h2>
+  <%= form_for(:reviewer, url: sessions_path) do |f| %>
+  <div class="col-md-4">
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+    <div class="field">
+      <%= f.label "password" %>
+      <%= f.password_field :password, class: 'form-control' %>
+    </div>
+    <div class="action">
+      <%= f.submit "login", class: "btn btn-md btn-primary"%>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label "pass" %>
-    <%= f.password_field :password %>
-  </div>
-  <div class="action">
-    <%= f.submit "login" %>
-  </div>
-<% end %>
+  <% end %>
+
+</div>

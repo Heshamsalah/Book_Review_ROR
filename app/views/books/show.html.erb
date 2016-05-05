@@ -1,9 +1,10 @@
 <!-- modifying the show template to show the notes related to a book and also provides a form to submit a note -->
-<div class="book">
+</br>
+<div>
   <%= content_tag :span, "#{@book.name} (#{@book.author})", class: "book-title" %>
   <%= link_to 'Edit', edit_book_path(@book) %>
 </div>
-
+</br>
 <div id="notes">
   <%= render @book.notes %> <!-- invokes the _note.html.erb partial -->
 </div>
@@ -13,18 +14,19 @@
   <%= form_for([@book, @book.notes.new]) do |f| %> <!-- [@book, @book.notes.new] this come because notes is a nested resourse so we have
     to supply the main resource then the one inside it. in this case @book is the main resource, @book.notes.new is the nested resource path
     for notes -->
-    <div class="field">
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-    </div>
-    <div class="field">
-      <%= f.label :note %>
-      <%= f.text_area :note, size: "25x5"%>
-    </div>
-    <div class="actions">
-      <%= f.submit "Add new note"%>
+    <div class="col-md-4">
+      <div class="field">
+          <%= f.label :title %>
+          <%= f.text_field :title, class: 'form-control'%>
+      </div>
+      <div class="field">
+          <%= f.label :note %>
+          <%= f.text_area :note, size: "25x5", class: 'form-control col-md-3'%>
+      </div>
+      <div class="actions">
+        <%= f.submit "Add new note", class: "btn btn-md btn-primary"%>
+        <%= link_to 'Back', books_path, class: "btn btn-md btn-primary" %>
+      </div>
     </div>
   <% end %>
 </div>
-
-<%= link_to 'Back', books_path %>
